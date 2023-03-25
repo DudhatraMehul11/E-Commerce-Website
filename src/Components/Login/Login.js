@@ -107,7 +107,7 @@ function Login(props) {
         {/* Same as */}
       </div>
       <ToastContainer
-        position="bottom-center"
+        position="bottom-right"
         autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}

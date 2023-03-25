@@ -1,0 +1,39 @@
+{
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+    ],
+    "Users2" : [
+        {
+            "id" : 1,
+            "name" :"Mehul",
+            "email" : "abc@gmail.com",
+            "pass" : "abcd1122"
+        }
+    ],
+    "product" : [
+        {
+            "id" :1 ,
+            "name" :"I phone",
+            "file":"assets/Images/Apple-iPhone-11-Background-PNG.png",
+            "price":"3000",
+            "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
+            "rating":"3"
+        },
+        {
+            "id" :2 ,
+            "name" :"I phone 11",
+            "file":"assets/Images/Apple-iPhone-11-PNG-Background-Image.png",
+            "price":"10000",
+            "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
+            "rating":"3"
+        },
+        {
+            "id" :3 ,
+            "name" :"I phone 12 mini",
+            "file":"assets/Images/Apple-iPhone-12-PNG-Image.png",
+            "price":"20000",
+            "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
+            "rating":"3"
+        }
+    ]
+  }

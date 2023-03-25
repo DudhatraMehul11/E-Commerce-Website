@@ -24,7 +24,7 @@ function Navbar(props) {
   const [open, setopen] = useState("");
 
   const user = JSON.parse(localStorage.getItem("user"));
-  const [uid] = user;
+
   const product = useSelector((state) => state.Addreducer);
   const { totalAmount } = product;
   const dispatch = useDispatch();
@@ -45,6 +45,12 @@ function Navbar(props) {
   //     data: {product, userid: uid.id}
   //   });
   // };
+
+  const totalQuantity =product.cartData.reduce(
+    (intiialvalue, curEle) => intiialvalue + curEle.quantity,
+    0
+  )
+  console.log(totalQuantity);
 
   const logoutHandler = () => {
     localStorage.clear();
@@ -151,7 +157,8 @@ function Navbar(props) {
                         alt="cart-logo"
                       />
                     </Link>
-                    <span className="cartData">{product.cartData.length}</span>
+                    <span className="cartData">{totalQuantity}
+                    </span>
                   </ul>
                 </>
               ) : (

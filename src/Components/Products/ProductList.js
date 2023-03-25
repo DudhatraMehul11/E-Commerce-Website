@@ -111,6 +111,7 @@ function ProductList(props) {
             max={30000}
             onInput={handlePrice}
           />
+         
           Rs. 2000 - Rs. {price}
         </div>
       </div>
@@ -182,7 +183,7 @@ function ProductList(props) {
                             {...{
                               smallImage: {
                                 alt: "MobileImg",
-                                isFluidWidth: true,
+                                
                                 src: view.file,
                                 width: 400,
                                 height: 400,
@@ -302,7 +303,7 @@ function ProductList(props) {
         </Dialog>
       </div>
       <ToastContainer
-        position="bottom-right"
+        position="bottom-left"
         autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
