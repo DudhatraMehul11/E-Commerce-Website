@@ -38,8 +38,9 @@ function ProductList(props) {
   const navigate = useNavigate();
 
   const user = localStorage.getItem("user");
+
   const product = useSelector((state) => state.Addreducer);
-  const { totalAmount } = product;
+  const { totalAmount, search } = product;
 
   useEffect(() => {
     getProduct();
@@ -71,9 +72,13 @@ function ProductList(props) {
   };
 
   const addTOCartHandler = (item) => {
-    dispatch(addproduct({ item, flag: true }));
+    dispatch(addproduct({ item }));
+  };
 
-  }
+  const SearchData = data.filter((item) =>
+    item.name.replace(' ','').toLowerCase().includes(search)
+    
+  );
 
   if (!user) {
     return <Navigate to="/login" />;
@@ -81,12 +86,9 @@ function ProductList(props) {
   return (
     <div className="main">
       <h3>Popular Product</h3>
-      <div className="filter" style={{ width: "120px", float: "left" }}>
+      {/* <div className="filter" style={{ width: "120px", float: "left" }}>
         <h4>Filters :</h4>
-        <div
-          class="form-group"
-          style={{ textAlign: "start" }}
-        >
+        <div class="form-group" style={{ textAlign: "start" }}>
           <label for="exampleFormControlSelect1">Rating : &nbsp;</label>
           <select
             class="form-control-sm "
@@ -100,9 +102,7 @@ function ProductList(props) {
             <option value={5}>5</option>
           </select>
         </div>
-        <div
-          style={{ textAlign: "start", marginTop: "20px" }}
-        >
+        <div style={{ textAlign: "start", marginTop: "20px" }}>
           Price Range :
           <input
             type="range"
@@ -111,51 +111,79 @@ function ProductList(props) {
             max={30000}
             onInput={handlePrice}
           />
-         
           Rs. 2000 - Rs. {price}
         </div>
-      </div>
-      <div
-        className="product_container"
-        style={{ width: "80%", float: "right" }}
-      >
+      </div> */}
+      <div className="product_container">
         <div className="items">
-          {data.map((item) =>
-            item.rating >= rating && price >= parseInt(item.price) ? (
-              <div className="item shadow-sm">
-                <div onClick={() => viewproductHandler(item)}>
-                  <img src={item.file} alt="img" />
-                </div>
-                <div className="item_disc">
-                  <span>
-                    <b>{item.name}</b>
-                  </span>
-                  <span>
-                    <b style={{ color: "brown" }}>Rs. {item.price}</b>
-                  </span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "start" }}>
-                  <span>Mobile Device</span>
-                </div>
+          {SearchData.length > 0
+            ? SearchData?.map((item) =>
+                item.rating >= rating ? (
+                  <div className="item shadow-sm">
+                    <div onClick={() => viewproductHandler(item)}>
+                      <img src={item.file} alt="img" />
+                    </div>
+                    <div className="item_disc">
+                      <span>
+                        <b>{item.name}</b>
+                      </span>
+                      <span>
+                        <b style={{ color: "brown" }}>Rs. {item.price}</b>
+                      </span>
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "start" }}>
+                      <span>Mobile Device</span>
+                    </div>
 
-                <br />
-                {/* <button
+                    <br />
+                    {/* <button
                   className="btn btn-success m-2"
                   onClick={() => viewproductHandler(item)}
                 >
                   View Product
                 </button> */}
-                <button
-                  className="btn btn-warning"
-                  onClick={() => addTOCartHandler(item)}
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => addTOCartHandler(item)}
+                    >
+                      Add To Cart
+                    </button>
+                  </div>
+                ) : (
+                  ""
+                )
+              )
+            : data?.map((item) => (
+                <div className="item shadow-sm">
+                  <div onClick={() => viewproductHandler(item)}>
+                    <img src={item.file} alt="img" />
+                  </div>
+                  <div className="item_disc">
+                    <span>
+                      <b>{item.name}</b>
+                    </span>
+                    <span>
+                      <b style={{ color: "brown" }}>Rs. {item.price}</b>
+                    </span>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "start" }}>
+                    <span>Mobile Device</span>
+                  </div>
+                  <br />
+                  {/* <button
+                  className="btn btn-success m-2"
+                  onClick={() => viewproductHandler(item)}
                 >
-                  Add To Cart
-                </button>
-              </div>
-            ) : (
-              ""
-            )
-          )}
+                  View Product
+                </button> */}
+                  <button
+                    className="btn btn-warning"
+                    onClick={() => addTOCartHandler(item)}
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              ))}
         </div>
         <Dialog
           onClose={() => setopen(false)}
@@ -183,7 +211,7 @@ function ProductList(props) {
                             {...{
                               smallImage: {
                                 alt: "MobileImg",
-                                
+
                                 src: view.file,
                                 width: 400,
                                 height: 400,

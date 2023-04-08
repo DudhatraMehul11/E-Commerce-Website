@@ -17,12 +17,12 @@ import {
   removeproduct,
   SubTotal,
   ResetState,
+  SearchData,
 } from "../../Actions";
 import axios from "axios";
 
 function Navbar(props) {
   const [open, setopen] = useState("");
-
   const user = JSON.parse(localStorage.getItem("user"));
 
   const product = useSelector((state) => state.Addreducer);
@@ -34,9 +34,10 @@ function Navbar(props) {
     setopen(false);
   };
 
-  useEffect(() => {
-    product.cartData.map((item) => setopen(item.flag));
-  }, [product]);
+  const handleSearchData = (e) => {
+    dispatch(SearchData(e.target.value));
+  }
+
 
   // const setCartData = async () => {
   //   const res = await axios({
@@ -46,12 +47,10 @@ function Navbar(props) {
   //   });
   // };
 
-  const totalQuantity =product.cartData.reduce(
+  const totalQuantity = product.cartData.reduce(
     (intiialvalue, curEle) => intiialvalue + curEle.quantity,
     0
-  )
-  console.log(totalQuantity);
-
+  );
   const logoutHandler = () => {
     localStorage.clear();
     dispatch(ResetState());
@@ -61,13 +60,13 @@ function Navbar(props) {
   return (
     <>
       <div>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <Link
-              to="/"
-              className="navbar-brand"
-              style={{ color: "firebrick" }}
-            >
+            <Link to="/" className="navbar-brand" style={{ color: "orange" }}>
+              <img
+                src="assets/Images/pngtree-online-shopping-logo-desing-png-image_6540923.png"
+                style={{ width: "80px" }}
+              />
               E Commerce
             </Link>
             <button
@@ -88,12 +87,12 @@ function Navbar(props) {
               {user ? (
                 <>
                   <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <Link className="nav-link" to="/">
                         {" "}
                         Most Rated Products
                       </Link>
-                    </li>
+                    </li> */}
                     {/* <li className="nav-item">
                   <Link className="nav-link" to="/addproduct">
                     {" "}
@@ -105,6 +104,27 @@ function Navbar(props) {
                         {" "}
                         All Products
                       </Link>
+                    </li>
+                    <li className="nav-item">
+                      <div class="input-group ms-3">
+                        <select
+                          class="form-select-sm input-group-text"
+                          aria-label=".form-select-lg example"
+                        >
+                          <option selected>All</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+
+                        <input
+                          type="text"
+                          class="form-control"
+                          aria-label="Sizing example input"
+                          aria-describedby="inputGroup-sizing-default"
+                          onChange={(e)=> handleSearchData(e)}
+                        />
+                      </div>
                     </li>
                   </ul>
                   <ul className="navbar-nav ">
@@ -120,7 +140,7 @@ function Navbar(props) {
                         aria-expanded="false"
                       >
                         <img
-                          src="assets/Images/person-circle-outline.svg"
+                          src="assets/Images/circle-user-regular.svg"
                           alt="logo"
                           width="30px"
                         />{" "}
@@ -153,17 +173,16 @@ function Navbar(props) {
                       {" "}
                       <img
                         style={{ width: "50px", height: "50px" }}
-                        src="assets/Images/cart-outline.svg"
+                        src="assets/Images/shopping-cart-white.svg"
                         alt="cart-logo"
                       />
+                      <span className="cartData">{totalQuantity}</span>
                     </Link>
-                    <span className="cartData">{totalQuantity}
-                    </span>
                   </ul>
                 </>
               ) : (
                 <>
-                  <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                  <ul className="navbar-nav mb-2 mb-lg-0"></ul>
                   <ul className="navbar-nav ">
                     <li className="nav-item">
                       <Link className="nav-link" to="/signup">
@@ -190,7 +209,7 @@ function Navbar(props) {
           </div>
         </nav>
       </div>
-      {/* <Dialog
+      <Dialog
         onClose={() => setopen(false)}
         open={open}
         disableEscapeKeyDown={true}
@@ -280,8 +299,8 @@ function Navbar(props) {
             </button>
           )}
         </DialogActions>
-      </Dialog> */}
-      <Drawer
+      </Dialog>
+      {/* <Drawer
         open={open}
         onClose={() => setopen(false)}
         direction="right"
@@ -310,7 +329,8 @@ function Navbar(props) {
                         <td>
                           <span>
                             <b>product Name : </b> {item.name} <br />
-                            <b>Price: </b>{item.price}
+                            <b>Price: </b>
+                            {item.price}
                           </span>
                         </td>
                         <td> </td>
@@ -344,7 +364,10 @@ function Navbar(props) {
           ) : null}
 
           <Typography variant="h5">
-            <span><b>SubTotal : </b><span style={{color:"darkred"}}> Rs.{totalAmount}</span> </span>
+            <span>
+              <b>SubTotal : </b>
+              <span style={{ color: "darkred" }}> Rs.{totalAmount}</span>{" "}
+            </span>
           </Typography>
         </DialogContent>
         <DialogActions>
@@ -365,7 +388,7 @@ function Navbar(props) {
             </button>
           )}
         </DialogActions>
-      </Drawer>
+      </Drawer> */}
     </>
   );
 }

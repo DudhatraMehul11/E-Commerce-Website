@@ -14,7 +14,7 @@ export const addproduct = (products) => {
   const { id, name, price, file } = products.item;
   return {
     type: "AddToCart",
-    data: { id, name, price, file, flag:products.flag },
+    data: { id, name, price, file},
   };
 };
 
@@ -54,6 +54,13 @@ export const buyNow = (products) => {
   return{
     type:"BuyNow",
     data: products,
+  }
+}
+
+export const SearchData = (search) => {
+  return{
+    type:"Search",
+    data: search,
   }
 }
 

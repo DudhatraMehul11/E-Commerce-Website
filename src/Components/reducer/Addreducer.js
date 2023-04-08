@@ -5,6 +5,7 @@ const initialstate = {
   quantity: 0,
   amount: 0,
   totalAmount: 0,
+  search :"",
 };
 
 const Addreducer = (state = initialstate, action) => {
@@ -74,6 +75,8 @@ const Addreducer = (state = initialstate, action) => {
   }else if(action.type == "ResetState")
   {
     return {cartData: []}
+  }else if(action.type == "Search"){
+    return{...state,search:action.data}
   }
    else {
     return state;

@@ -34,6 +34,64 @@
             "price":"20000",
             "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
             "rating":"3"
+        },
+        {
+            "id" :4 ,
+            "name" :"Samsung M30",
+            "file":"assets/Images/Apple-iPhone-12-PNG-Image.png",
+            "price":"20000",
+            "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
+            "rating":"3"
+        },
+        {
+            "id" :5 ,
+            "name" :"Redmi Note 10",
+            "file":"assets/Images/Apple-iPhone-12-PNG-Image.png",
+            "price":"20000",
+            "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
+            "rating":"3"
+        },
+        {
+            "id" :6 ,
+            "name" :"Google Pixel 7",
+            "file":"assets/Images/Apple-iPhone-12-PNG-Image.png",
+            "price":"20000",
+            "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
+            "rating":"3"
+        },
+        {
+            "id" :7 ,
+            "name" :"Realme 10",
+            "file":"assets/Images/Apple-iPhone-12-PNG-Image.png",
+            "price":"20000",
+            "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
+            "rating":"3"
+        },
+        {
+            "id" :8 ,
+            "name" :"MicroMax",
+            "file":"assets/Images/Apple-iPhone-12-PNG-Image.png",
+            "price":"20000",
+            "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
+            "rating":"3"
+        }
+        ,
+        {
+            "id" :9 ,
+            "name" :"Oppo",
+            "file":"assets/Images/Apple-iPhone-12-PNG-Image.png",
+            "price":"20000",
+            "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
+            "rating":"3"
+        }
+        ,
+        {
+            "id" :10 ,
+            "name" :"I phone 12 mini",
+            "file":"assets/Images/Apple-iPhone-12-PNG-Image.png",
+            "price":"20000",
+            "disc":"The Samsung Galaxy M40 boasts of many segment-firsts such as a hole-punch display and a vibrating screen for a earpiece. It features a bright and vibrant 6.3-inch full-HD+ PLS TFT LCD display, which has good viewing angles but there's also a mild vignetting around the edges, which can be distracting. The body is slim and light but the plastic back attracts scuff marks pretty easily. ",
+            "rating":"3"
         }
     ]
   }
